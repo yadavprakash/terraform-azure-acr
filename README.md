@@ -23,7 +23,7 @@ for creating AZURE resources, and you can customize the inputs as needed. Below 
 # Example: default
 ```hcl
     module "acr" {
-      source              = "git::https://github.com/opsstation/terraform-azure-resource-group.git?ref=v1.0.0"
+      source              = "git::https://github.com/opsstation/terraform-azure-acr.git?ref=v1.0.0"
       name                = local.name
       environment         = local.environment
       resource_group_name = module.resource_group.resource_group_name
@@ -40,7 +40,7 @@ for creating AZURE resources, and you can customize the inputs as needed. Below 
 
 ```hcl
     module "acr" {
-      source              = "git::https://github.com/opsstation/terraform-azure-resource-group.git?ref=v1.0.0"
+      source              = "git::https://github.com/opsstation/terraform-azure-acr.git?ref=v1.0.0"
       name                = local.name
       environment         = local.environment
       resource_group_name = module.resource_group.resource_group_name
@@ -63,7 +63,7 @@ for creating AZURE resources, and you can customize the inputs as needed. Below 
 
 ```hcl
     module "acr" {
-      source              = "git::https://github.com/opsstation/terraform-azure-resource-group.git?ref=v1.0.0"
+      source              = "git::https://github.com/opsstation/terraform-azure-acr.git?ref=v1.0.0"
       name                = local.name
       environment         = local.environment
       resource_group_name = module.resource_group.resource_group_name
