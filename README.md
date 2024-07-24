@@ -23,7 +23,7 @@ for creating AZURE resources, and you can customize the inputs as needed. Below 
 # Example: default
 ```hcl
     module "acr" {
-      source              = "git::https://github.com/opsstation/terraform-azure-acr.git?ref=v1.0.0"
+      source              = "git::https://github.com/yadavprakash/terraform-azure-acr.git?ref=v1.0.0"
       name                = local.name
       environment         = local.environment
       resource_group_name = module.resource_group.resource_group_name
@@ -40,7 +40,7 @@ for creating AZURE resources, and you can customize the inputs as needed. Below 
 
 ```hcl
     module "acr" {
-      source              = "git::https://github.com/opsstation/terraform-azure-acr.git?ref=v1.0.0"
+      source              = "git::https://github.com/yadavprakash/terraform-azure-acr.git?ref=v1.0.0"
       name                = local.name
       environment         = local.environment
       resource_group_name = module.resource_group.resource_group_name
@@ -63,7 +63,7 @@ for creating AZURE resources, and you can customize the inputs as needed. Below 
 
 ```hcl
     module "acr" {
-      source              = "git::https://github.com/opsstation/terraform-azure-acr.git?ref=v1.0.0"
+      source              = "git::https://github.com/yadavprakash/terraform-azure-acr.git?ref=v1.0.0"
       name                = local.name
       environment         = local.environment
       resource_group_name = module.resource_group.resource_group_name
@@ -87,14 +87,14 @@ for creating AZURE resources, and you can customize the inputs as needed. Below 
 This example demonstrates how to create various AZURE resources using the provided modules. Adjust the input values to suit your specific requirements.
 
 ## Examples
-For detailed examples on how to use this module, please refer to the [Examples](https://github.com/opsstation/terraform-azure-acr/tree/master/_example) directory within this repository.
+For detailed examples on how to use this module, please refer to the [Examples](https://github.com/yadavprakash/terraform-azure-acr/tree/master/_example) directory within this repository.
 
 ## License
-- This project is licensed under the **MIT** License - see the [LICENSE](https://github.com/opsstation/terraform-azure-acr/blob/master/LICENSE) file for details.
+- This project is licensed under the **MIT** License - see the [LICENSE](https://github.com/yadavprakash/terraform-azure-acr/blob/master/LICENSE) file for details.
 
 ## Author
 Your Name
-Replace **MIT** and **OpsStation** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
+Replace **MIT** and **yadavprakash** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
 
 
 Happy Terraforming!
@@ -123,7 +123,7 @@ Happy Terraforming!
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | git::https://github.com/opsstation/terraform-azure-labels.git | v1.0.0 |
+| <a name="module_labels"></a> [labels](#module\_labels) | git::https://github.com/yadavprakash/terraform-azure-labels.git | v1.0.0 |
 ## Resources
 
 | Name | Type |
@@ -162,14 +162,14 @@ Happy Terraforming!
 | <a name="input_identity_ids"></a> [identity\_ids](#input\_identity\_ids) | Specifies a list of user managed identity ids to be assigned. This is required when `type` is set to `UserAssigned` or `SystemAssigned, UserAssigned` | `any` | `null`                                                  | no |
 | <a name="input_label_order"></a> [label\_order](#input\_label\_order) | Label order, e.g. `name`,`application`. | `list(any)` | <pre>[<br>  "name",<br>  "environment"<br>]</pre>       | no |
 | <a name="input_location"></a> [location](#input\_location) | The location/region to keep all your network resources. To get the list of all locations with table format from azure cli, run 'az account list-locations -o table' | `string` | `""`                                                    | no |
-| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg ''. | `string` | `"OpsStation"`                                          | no |
+| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg ''. | `string` | `"yadavprakash"`                                          | no |
 | <a name="input_multi_sub_vnet_link"></a> [multi\_sub\_vnet\_link](#input\_multi\_sub\_vnet\_link) | Flag to control creation of vnet link for dns zone in different subscription | `bool` | `false`                                                 | no |
 | <a name="input_name"></a> [name](#input\_name) | Name  (e.g. `app` or `cluster`). | `string` | `""`                                                    | no |
 | <a name="input_network_rule_set"></a> [network\_rule\_set](#input\_network\_rule\_set) | Manage network rules for Azure Container Registries | <pre>object({<br>    default_action = optional(string)<br>    ip_rule = optional(list(object({<br>      ip_range = string<br>    })))<br>    virtual_network = optional(list(object({<br>      subnet_id = string<br>    })))<br>  })</pre> | `null`                                                  | no |
 | <a name="input_private_dns_name"></a> [private\_dns\_name](#input\_private\_dns\_name) | n/a | `string` | `"privatelink.azurecr.io"`                              | no |
 | <a name="input_private_dns_zone_vnet_link_registration_enabled"></a> [private\_dns\_zone\_vnet\_link\_registration\_enabled](#input\_private\_dns\_zone\_vnet\_link\_registration\_enabled) | (Optional) Is auto-registration of virtual machine records in the virtual network in the Private DNS zone enabled? | `bool` | `true`                                                  | no |
 | <a name="input_public_network_access_enabled"></a> [public\_network\_access\_enabled](#input\_public\_network\_access\_enabled) | To denied public access | `bool` | `false`                                                 | no |
-| <a name="input_repository"></a> [repository](#input\_repository) | Terraform current module repo | `string` | `"https://github.com/opsstation/terraform-azure-acr"`   | no |
+| <a name="input_repository"></a> [repository](#input\_repository) | Terraform current module repo | `string` | `"https://github.com/yadavprakash/terraform-azure-acr"`   | no |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | A container that holds related resources for an Azure solution | `string` | `""`                                                    | no |
 | <a name="input_retention_policy"></a> [retention\_policy](#input\_retention\_policy) | Set a retention policy for untagged manifests | <pre>object({<br>    days    = optional(number)<br>    enabled = optional(bool)<br>  })</pre> | <pre>{<br>  "days": 10,<br>  "enabled": true<br>}</pre> | no |
 | <a name="input_same_vnet"></a> [same\_vnet](#input\_same\_vnet) | Variable to be set when multiple acr having common DNS in same vnet. | `bool` | `false`                                                 | no |

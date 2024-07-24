@@ -12,7 +12,7 @@ locals {
 ## Resource group in which all resources will be deployed.
 ##-----------------------------------------------------------------------------
 module "resource_group" {
-  source      = "git::https://github.com/opsstation/terraform-azure-resource-group.git?ref=v1.0.0"
+  source      = "git::https://github.com/yadavprakash/terraform-azure-resource-group.git?ref=v1.0.0"
   name        = "complete"
   environment = "tested"
   location    = "North Europe"
@@ -23,7 +23,7 @@ module "resource_group" {
 ## Virtual Network for which subnet will be created for private endpoint and vnet link will be created in private dns zone.
 ##-----------------------------------------------------------------------------
 module "vnet" {
-  source              = "git::https://github.com/opsstation/terraform-azure-vnet.git?ref=v1.0.0"
+  source              = "git::https://github.com/yadavprakash/terraform-azure-vnet.git?ref=v1.0.0"
   name                = "app"
   environment         = "test"
   resource_group_name = module.resource_group.resource_group_name
@@ -36,7 +36,7 @@ module "vnet" {
 ## Subnet in which private endpoint will be created.
 ##-----------------------------------------------------------------------------
 module "subnet" {
-  source = "git::https://github.com/opsstation/terraform-azure-subnet.git?ref=v1.0.1"
+  source = "git::https://github.com/yadavprakash/terraform-azure-subnet.git?ref=v1.0.1"
 
   name                 = "app"
   environment          = "test"
@@ -81,3 +81,4 @@ module "container-registry" {
   virtual_network_id = join("", module.vnet.vnet_id)
   subnet_id          = module.subnet.subnet_id
 }
+
